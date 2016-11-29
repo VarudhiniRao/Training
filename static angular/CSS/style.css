@@ -1,0 +1,18 @@
+.box{
+padding:50px;
+width:180px;
+height: 30px;
+border-radius: 30px;
+border-color: blue;
+align-content:center;
+background-color: cyan;
+color:black;
+text-align: center;
+text-shadow: 10px;
+bottom: 5px;
+margin-left:330px;
+margin-top: 230px;
+}
+  .box:hover{
+  background-color: yellow;
+}
