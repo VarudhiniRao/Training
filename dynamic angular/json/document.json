@@ -1,0 +1,43 @@
+{
+  "Channels": [
+    {
+      "Disney": [
+        {
+          "Hannah-montana": "9:00pm"
+        },
+        {
+          "Spider-Man": "8:30pm"
+        },
+        {
+          "Wizards of Waverly Places": "9:30pm"
+        }
+      ]
+    },
+    {
+      "Cartoon Network": [
+        {
+          "Ben Ten": "6:00pm"
+        },
+        {
+          "Cinderalla": "7:00pm"
+        },
+        {
+          "Bablade": "8:15pm"
+        }
+      ]
+    },
+    {
+      "Mtv": [
+        {
+          "Coke Studio": "10:00pm"
+        },
+        {
+          "Roadies": "6:30pm"
+        },
+        {
+          "Diaries": "3:00pm"
+        }
+      ]
+    }
+  ]
+}

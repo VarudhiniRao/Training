@@ -1,0 +1,39 @@
+<html>
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="channel_controller/channel.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body ng-app="channelApp">
+
+    <div style="padding-left:250px;font-weight:bold;background:grey">
+        <div  ng-app="channelApp" ng-controller="channelCtrl">
+      <h3>  ENTER YOUR FAVORITE CHANNEL:</h3><br><br>
+        <input type="text" ng-model="channel" placeholder="Enter Channel"><br><br>
+        <button type="button" ng-click="clickMe()">click</button>
+
+        <table border="1" class="table" style="width:250px; height:80px">
+          <thead>
+            <tr>
+             <td>Program</td>
+
+           </tr>
+          </thead>
+              <tbody>
+                <tr  class="warning" ng-repeat="v in view">
+                  <td class="active" ng-repeat="(key,value) in v">{{key}}    </td>
+                </tr>
+            </tbody>
+
+          </table>
+
+
+      </div>
+    </div>
+
+
+  </body>
+</html>
