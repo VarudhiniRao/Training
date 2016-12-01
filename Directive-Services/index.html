@@ -1,0 +1,64 @@
+<html>
+  <head>
+  <meta http-equiv="expires" content="0"/>
+
+    <script src="EmployeeJs/angular.min.js"></script>
+    <script src="EmployeeJs/emp.js"></script>
+   
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </head>
+  
+  <body ng-app="myApp" ng-controller="empdetailsCtrl">
+     <div>
+
+    	<button type="button" class="btn btn-success" ng-click="clickMe()">GET EMPLOYEE DETAILS </button>
+      <table border="1" class="table" style="width:550px;">
+      <th class="success">EMPLOYEE ID</th>
+         <th class="info">EMPLOYEE NAME</th>
+        
+
+      <tr ng-repeat=" details in myData.employeeDetails track by $index">
+        <td class="success">{{details.empNum}}</td>
+        <td class="info">{{details.empName}}</td>
+
+        <td class="danger"><employee-details-card delete="delete($index)"; >
+        </employee-details-card></td>
+       
+
+      </tr>
+      
+      </table>
+
+    
+
+    </div>
+
+      <div ng-controller="empLocationCtrl">
+
+        <button type="button" style="margin-left:370px;" class="btn btn-success" ng-click="click()">GET EMPLOYEE LOCATION DETAILS</button><br><br>
+          
+          <table border="1" class="table" style="width:550px;">
+        <th class="success">EMPLOYEE LOCATION</th>
+             <th class="info">EMPLOYEE NAME</th>
+        
+
+        <tr ng-repeat=" details1 in myData track by $index">
+          <td class="success">{{details1.empLocation}}</td>
+          <td class="info">{{details1.empName}}</td>
+
+           <td class="danger"><employee-details-card delete="delete($index)"; >
+          </employee-details-card></td>
+         
+
+      </tr>
+      
+      </table>
+      </div>
+    </body>
+
+ </html>

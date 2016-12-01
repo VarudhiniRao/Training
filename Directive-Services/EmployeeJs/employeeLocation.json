@@ -1,0 +1,39 @@
+{
+  "employeeLocations": [
+    {
+      "empLocation": "U.S",
+      "empName": "ADAM"
+      
+    },
+    {
+      "empLocation": "AUSTRIA",
+      "empName": "CHRIST"
+      
+
+    },
+    {
+      "empLocation": "HUNGRY",
+      "empName": "MOOLCHAND"
+      
+
+    },
+    {
+      "empLocation": "POLAND",
+      "empName": "VICKY"
+      
+
+    },
+    {
+      "empLocation":"MUMBAI",
+      "empName": "PHANTOM"
+      
+
+    },
+    {
+      "empLocation": "NEW YORK",
+      "empName": "JHONSON"
+     
+     
+    }
+  ]
+}
