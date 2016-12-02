@@ -1,0 +1,39 @@
+<table class="table-responsive table table-bordered table table-hover">
+    <tr>
+        <th>
+            <input type="button" value="ALPHA NUMERIC" ng-click="sortBy('alpha')">
+        </th>
+        <span class="sortorder" ng-show="propertyName === 'alpha'" ng-class="{reverse: reverse}"></span>
+        <th>
+            <input type="button" value="NUMBERS" ng-click="sortBy('number')">
+        </th>
+        <span class="sortorder" ng-show="propertyName === 'number'" ng-class="{reverse: reverse}"></span>
+        <th>
+            <input type="button" value="ANIMALS" ng-click="sortBy('animal')">
+        </th>
+        <span class="sortorder" ng-show="propertyName === 'animal'" ng-class="{reverse: reverse}"></span>
+        <th>
+            <input type="button" value="WEBSITE" ng-click="sortBy('link')">
+        </th>
+        <span class="sortorder" ng-show="propertyName === 'link'" ng-class="{reverse: reverse}"></span>
+    </tr>
+    	<tr>
+    	<td><input type="text" placeholder="Search"></td>
+    	<td><input type="text" placeholder="Search"></td>
+    	<td><input type="text" placeholder="Search"></td>
+    	<td><input type="text" placeholder="Search"></td>
+    	</tr>
+
+    <tr ng-repeat=" details in vm | orderBy:propertyName:reverse">
+        <td>{{details.alpha}}</td>
+        <td>{{details.number}}</td>
+        <td>{{details.animal}}</td>
+        <td>{{details.link}}</td>
+        <tr>
+            <tf>
+                <th>ALPHA NUMERIC</th>
+                <th>NUMBERS</th>
+                <th>ANIMALS</th>
+                <th>WEBSITE</th>
+            </tf>
+</table>
