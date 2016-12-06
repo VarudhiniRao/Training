@@ -1,0 +1,45 @@
+<html>
+  <head>
+  <meta http-equiv="expires" content="0"/>
+
+   
+   
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+     <link href="./css/style.css" rel="stylesheet">
+
+     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+  <!-- UI-Router -->
+  	<script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+  <script src="js/routing.js"></script>
+   
+   </head>
+<body ng-app="myRouting">
+	
+	<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+   	<h3>HOME</h3>
+  </div>
+</nav>
+	<ul>
+		<li><a ui-sref="science">
+			<h4>SCIENCE</h4></a>
+		</li>
+		<li><a ui-sref="nature">
+			<h4>NATURE</h4></a>
+		</li>
+		<li><a ui-sref="technology">
+			<h4>TECHNOLOGY</h4></a>
+		</li>
+	</ul>
+
+	<div ui-view="viewA"></div>
+	<div ui-view="viewText"></div>
+	<div ui-view="viewB"></div>
+	<div ui-view="viewC"></div>	
+</body>
+</html>
