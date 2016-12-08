@@ -1,0 +1,32 @@
+{
+    "employeeDetails": [{
+        "empNum": "301",
+        "empName": "ADAM"
+
+    }, {
+        "empNum": "305",
+        "empName": "CHRIST"
+
+
+    }, {
+        "empNum": "302",
+        "empName": "MOOLCHAND"
+
+
+    }, {
+        "empNum": "303",
+        "empName": "VICKY"
+
+
+    }, {
+        "empNum": "304",
+        "empName": "PHANTOM"
+
+
+    }, {
+        "empNum": "305",
+        "empName": "JHONSON"
+
+
+    }]
+}

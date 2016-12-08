@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <meta http-equiv="expires" content="0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="appCtrl">
+   
+    <table border="1" class="table" style="width:550px;">
+        <th class="success">EMPLOYEE ID</th>
+        <th class="info">EMPLOYEE NAME</th>
+        <tr ng-repeat=" details in lazyArray track by $index">
+            <td class="success">{{details.empNum}}</td>
+            <td class="info">{{details.empName}}</td>
+            <!--  <td class="danger">
+                <employee-details-card delete="delete($index)" ;>
+                </employee-details-card>
+            </td> -->
+        </tr>
+    </table><br><br>
+
+    <table border="1" class="table" style="width:550px;">
+        <th class="success">EMPLOYEE LOCATION</th>
+        <th class="info">EMPLOYEE NAME</th>
+        <tr ng-repeat=" details in lazyArray2 track by $index">
+            <td class="success">{{details.empLocation}}</td>
+            <td class="info">{{details.empName}}</td>
+            <!--  <td class="danger">
+                <employee-details-card delete="delete($index)" ;>
+                </employee-details-card>
+            </td> -->
+        </tr>
+    </table>
+    
+    <script>
+    var app = angular.module("myApp", []);
+
+    /*app.service("promiseService", function($http,$q){
+     this.getEmpData = function(){
+      return $http.
+     }
+    } */
+
+    app.controller("appCtrl", function($scope, $q, $http, $timeout) {
+
+        $scope.promise1 = [];
+        $scope.promise2 = [];
+        $scope.promise3 = [];
+        $scope.lazyArray = [];
+         $scope.lazyArray2 = [];
+        //$scope.dummyArray = ["employe.json", "employeeLocation.json", "resume.json"]
+        /*$http.get("employe.json").success(function(resp) {
+            $scope.promise1 = resp.employeeDetails;
+            console.log($scope.promise1);
+        });*/
+
+        //promise1 is empty here, so we define it after hhtp call
+        $scope.promise1 = $http.get("employe.json");
+        $scope.promise2 = $http.get("employeeLocation.json");
+
+        $scope.promise3 = $http.get("resume.json");
+
+        var promise = $q.all([$scope.promise1, $scope.promise2, $scope.promise3]).then(function(response) {
+            console.log(response[0].data, response[1].data, response[2].data);
+            $scope.promise1 = response[0].data['employeeDetails'];
+            $scope.promise2 = response[1].data['employeeLocations'];
+            $scope.promise3 = response[2].data;
+
+            if ($scope.promise1.length > 0 && $scope.promise2.length > 0) {
+                fnCallback();
+            }
+        });
+
+
+        // angular.forEach($scope.dummyArray, function(val, key) {
+        //     var promise = $q.all($http.get(val)).then(function(response) {
+        //         $scope.lazyArray.push(response);
+        //         console.log(response[0].data, response[1].data, response[2].data);
+        //     });
+        //     console.log($scope.lazyArray);
+        // })
+
+        function fnCallback() {
+            angular.forEach($scope.promise1, function(item) {
+                promise = promise.then(function() {
+                    return $timeout(function() {
+                        $scope.lazyArray.push(item);
+                        console.log('Item executed: ' + item);
+                    }, 2000);
+                });
+
+            });
+            angular.forEach($scope.promise2, function(item) {
+                promise = promise.then(function() {
+                    return $timeout(function() {
+                        $scope.lazyArray2.push(item);
+                        console.log('Item executed: ' + item);
+                    }, 2000);
+                });
+
+            });
+
+        }
+    });
+    </script>
+</body>
+
+</html>
