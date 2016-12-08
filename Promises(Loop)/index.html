@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <meta http-equiv="expires" content="0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="appCtrl">
+    <button type="button">"Go!!.."</button>
+    <table border="1" class="table" style="width:550px;">
+        <th class="success">EMPLOYEE ID</th>
+        <th class="info">EMPLOYEE NAME</th>
+        <tr ng-repeat=" details in lazyArray track by $index">
+            <td class="success">{{details.empNum}}</td>
+            <td class="info">{{details.empName}}</td>
+           <!--  <td class="danger">
+                <employee-details-card delete="delete($index)" ;>
+                </employee-details-card>
+            </td> -->
+        </tr>
+    </table>
+
+    <script>
+    
+    var app = angular.module("myApp", []);
+    app.controller('appCtrl', function($scope, $q, $timeout, $http) {
+        $scope.listOfItems = [];
+        $scope.lazyArray = [];
+        console.log("dfd");
+
+        $http.get('employe.json').success(function(response) {
+
+            console.log(response);
+            $scope.listOfItems = response.employeeDetails;
+
+            if ($scope.listOfItems.length > 0) {
+
+                var promise = $q.all([]);
+                // Iterating list of items.
+                angular.forEach($scope.listOfItems, function(item) {
+                    promise = promise.then(function() {
+
+                        return $timeout(function() {
+
+                          $scope.lazyArray.push(item);
+                            console.log('Item executed: ' + item.empName);
+                        }, 2000);
+                    });
+                });
+
+                promise.finally(function() {
+                    console.log('Chain finished!');
+                });
+
+                // fnPromise();
+            }
+        }).error(function(response) {
+            console.log(response);
+        })
+
+
+        // Creating an empty initial promise that always resolves itself.
+        //either way of writing;;;;
+        // function fnPromise() {
+        //   var promise = $q.all([]);
+        //         // Iterating list of items.
+        //         angular.forEach(listOfItems, function(item) {
+        //             promise = promise.then(function() {
+        //                 return $timeout(function() {
+        //                     console.log('Item executed: ' + item.empName  +item. empNum);
+        //                 }, 2000);
+        //             });
+        //         });
+
+    
+
+    });
+    </script>
+</body>
+
+</html>
