@@ -1,0 +1,61 @@
+{
+    "Name": "VARUDHINI",
+    "Mobile": "9502743982",
+    "Mailid": "varudhinirao26@gmail.com",
+    "Skypeid": "Varudhini ruttala",
+    "careerobjective": "To work in a firm with a professional work driven environment where I can utilize and apply my knowledge skills which would enable me as a fresher to grow while fulfilling institutional needs",
+    "EducationalQualification": [{
+        "Qualification": "Bachelors of Technology ",
+        "College": "Kakinada Institute Of engineering and Techonolgy ",
+        "Percentage": "75%"
+    }, {
+        "Qualification": "AISSCE",
+        "College": "Kendriya Vidayala, New-delhi",
+        "Percentage": "78%"
+    }, {
+        "Qualification": "S.S.C",
+        "College": "Kendriya Vidayala, New-delhi",
+        "Percentage": "C.G.P.A-09"
+    }],
+    "SoftSkills": [{
+        "SoftSkills1": "English",
+        "SoftSkills2": "Leadership qualities",
+        "SoftSkills3": "Team player",
+        "SoftSkills4": "Listening skills",
+        "SoftSkills5": "Quick learner"
+    }],
+    "TechnicalSkills": [{
+        "TechnicalSkills1": "C",
+        "TechnicalSkills2": "HTML",
+        "TechnicalSkills3": "Java",
+        "TechnicalSkills4": "CSS",
+        "TechnicalSkills5": "Angular-Js"
+    }],
+
+    "Strenghts": [{
+        "Strenghts1": "Work with positive attitude to contribute healthy functioning of the organization",
+        "Strenghts2": "Self Confidence and great patience ",
+        "Strenghts3": "Analyzing every angle of a project before working on it ",
+        "Strenghts4": "Willingness to learn ",
+        "Strenghts5": "Adjustment in any kind of environment "
+    }],
+
+    "Fathername": "R.Nageswara Rao",
+    "Mothername": "R.Padmavathi",
+    "DOB": "26-sep-1994",
+    "Gender": "Female",
+    "Nationality": "Indian",
+
+    "Acheivements": [
+
+        { "point1": "Got certified by National Skill Development Co-operation (NSDC)" ,
+
+        "point2": "Represented Jawaharlal Nehru Technological University Kakinada for Basket Ball in South zone inter university for three consecutive years",
+        "point3": "Secured second place in basket ball in central zone in GEC, Vijayawada",
+        "point4": "Got certified as top 5 in mock interviews conducted by Face Academy",
+        "point5": "Got certified with leadership certificate in two consecutive years"
+    }]
+
+
+
+}
